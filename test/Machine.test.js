@@ -29,6 +29,23 @@ describe('the vending machine', () => {
         expect(`We accept bills in these amounts: 10, 20, 50, 100, 500`).toEqual(notAcceptedAmount);
     });
 
+    // 3rd test case
+    it('I want to add additional money', () => {
+        // setup
+        const machine = new Machine();
+        const previousDeposit = 100;
+        const curentDeposit = 50;
+
+        machine.deposit(previousDeposit);
+        // exercise
+        const actualAmount = machine.deposit(curentDeposit);
+
+        // assert
+        expect(`You have deposited Rs ${previousDeposit + curentDeposit}`).toEqual(actualAmount);
+    });
+
+    
+
 
 
 });
